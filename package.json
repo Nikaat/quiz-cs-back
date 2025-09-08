@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "@types/cors": "^2.8.19",
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "mongoose": "^8.18.0"
   }
 }

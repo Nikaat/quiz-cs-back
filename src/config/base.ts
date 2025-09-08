@@ -1,9 +1,9 @@
 import dotenv from 'dotenv';
-import { Config } from '../types';
 
 dotenv.config();
 
-const config: Config = {
+const config = {
+  mangoURI: process.env.MONGO_URI || "",
   port: Number(process.env.PORT) || 3000,
   nodeEnv: process.env.NODE_ENV || 'development',
   baseOfRoute: process.env.BASE_OF_ROUTE || "/api",
