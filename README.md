@@ -1,3 +1,3 @@
-## TS-NODE-EXPRESS-TODOLIST
+## QUIZ-CS-SERVER
 
-Simple todo-list using fs as db
+Server of quiz cs for have access and modifications of data.
