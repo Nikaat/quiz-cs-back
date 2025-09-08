@@ -4,11 +4,13 @@ import { IProject } from "@/types/collections";
 
 const projectSchema = new Schema<IProject>(
   {
-    title: { type: String, required: true },
+    key: { type: String, required: true },
     types: [{ type: String, required: true }],
     languages: [{ type: Schema.Types.ObjectId, ref: MODEL_NAMES.LANGUAGE }]
   },
-  { timestamps: true }
+  {
+    timestamps: true
+  }
 );
 
 export const Project = model<IProject>(MODEL_NAMES.PROJECT, projectSchema);

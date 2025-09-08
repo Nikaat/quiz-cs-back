@@ -1,5 +1,3 @@
-import { DataCollection } from "..";
-
 export const MODEL_NAMES = {
   PROJECT: "Project",
   LANGUAGE: "Language",

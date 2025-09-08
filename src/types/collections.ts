@@ -7,7 +7,7 @@ export interface ILanguage extends Document {
 }
 
 export interface IProject extends Document {
-  title: string
+  key: string
   types: string[]
   languages: Types.ObjectId[]
   createdAt: Date
