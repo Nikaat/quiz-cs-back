@@ -1,4 +1,4 @@
-import { Collection } from ".."
+import { DataCollection } from ".."
 
 export const ROUTES = {
   GET_ALL: "",
@@ -8,7 +8,7 @@ export const ROUTES = {
   REMOVE: "/delete/:id",
 }
 
-export const BASE_ROUTES: Record<Collection, string> = {
+export const BASE_ROUTES: Record<DataCollection, string> = {
   translation: "/translation",
   project: "/project",
   language: "/language"

@@ -1,7 +1,7 @@
 import { Request, Response } from "express"
 import { ERRORS } from "@/types/enums/errors"
 import { getMessagesByCollection } from "@/types/enums/messages"
-import { BaseItem, Collection, CRUDItem, CRUDModel } from "@/types"
+import { BaseItem, DataCollection, CRUDItem, CRUDModel } from "@/types"
 import { errorResponse, requestPayload, successResponse } from "@/lib/utils"
 
 type Functions<T, K> = {
@@ -12,7 +12,7 @@ type Functions<T, K> = {
   ) => Promise<Response>
 }
 
-export function crudController<T, K>(model: CRUDModel<T, K>, collection: Collection) {
+export function crudController<T, K>(model: CRUDModel<T, K>, collection: DataCollection) {
   const messages = getMessagesByCollection(collection)
   const functionsKey = ["getAll", "getSingle", "create", "update", "remove"] as const
 
