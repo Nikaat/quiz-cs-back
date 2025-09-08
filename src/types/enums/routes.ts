@@ -9,5 +9,7 @@ export const ROUTES = {
 }
 
 export const BASE_ROUTES: Record<Collection, string> = {
-  translate: "/translate"
+  translation: "/translation",
+  project: "/project",
+  language: "/language"
 }
