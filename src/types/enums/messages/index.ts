@@ -1,0 +1,1 @@
+export { getMessagesByCollection } from "./messagesByCollection"
