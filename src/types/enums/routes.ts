@@ -1,6 +1,13 @@
-const routes = {
-  READ_TODOS: "/todos",
-  CREATE_TODO: "/todos/create",
-  DELETE_TODO: "todos/delete/:id",
-  UPDATE_TODO: "todos/update/:id"
+import { Collection } from ".."
+
+export const ROUTES = {
+  GET_ALL: "",
+  ADD: "/create",
+  EDIT: "/update",
+  GET_SINGLE: "/:id",
+  REMOVE: "/delete/:id",
+}
+
+export const BASE_ROUTES: Record<Collection, string> = {
+  translate: "/translate"
 }
