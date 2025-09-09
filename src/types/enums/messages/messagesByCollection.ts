@@ -1,4 +1,5 @@
 import { DataCollection } from "@/types";
+import { CONFIG_MESSAGES } from "./config";
 import { PROJECT_MESSAGES } from "./project";
 import { LANGUAGE_MESSAGES } from "./language";
 import { TEMPLATE_MESSAGES } from "./template";
@@ -10,6 +11,7 @@ export const getMessagesByCollection = (collection: DataCollection) => {
     language: LANGUAGE_MESSAGES,
     template: TEMPLATE_MESSAGES,
     project: PROJECT_MESSAGES,
+    config: CONFIG_MESSAGES
   }
   return messagesMap[collection]
 }

@@ -3,7 +3,7 @@ import { Date, Document, Types } from "mongoose"
 type IBase = {
   createdAt: Date
   updatedAt: Date
-} & Document
+} & Omit<Document, "errors">
 
 export interface ILanguage extends IBase {
   key: string
@@ -28,3 +28,5 @@ export interface ITemplate extends IBase {
   confirmPay: Authentication.Config
   authentication: Authentication.Config
 }
+
+export interface IConfig extends IBase, Config.Config { }
