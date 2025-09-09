@@ -3,5 +3,6 @@ export const MODEL_NAMES = {
   LANGUAGE: "Language",
   TRANSLATION: "Translation",
   TEMPLATE: "Template",
-  CONFIG: "config"
+  CONFIG: "Config",
+  COMPOSITION: "Composition"
 } as const

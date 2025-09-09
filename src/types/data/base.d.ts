@@ -21,16 +21,7 @@ type OptionalString = string
 /** Supported themes */
 type SupportedTheme = "default"
 
-/** Supported languages */
-type SupportedLanguage = "us" | "gb" | "ir" | "it" | "jp" | "pt" | "th" | "au" | "sa" | "bh" | "jo" | "kw" | "om" | "qa"
-
-/** Project names */
-type ProjectName = "matchaAI"
-
 /** Type names */
-type TypeName = "myfit" | "fit" | "tamdid"
-
-/** First aid options */
 type FirstAidOption = "start"
 
 // ====================

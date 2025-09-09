@@ -1,4 +1,6 @@
 import { HeaderSchema } from "@/common/schemas/header";
+import { ITemplate } from "@/types/collections";
+import { MODEL_NAMES } from "@/types/enums/models";
 import { Schema } from "mongoose";
 
 export const ErrorTemplateSchema = new Schema<Errors.Content>(
@@ -134,10 +136,10 @@ const VerificationStepSchema = new Schema<Authentication.VerificationStep>(
   { _id: false }
 );
 
-export const AuthenticationTemplateSchema = new Schema<Authentication.Config>(
+export const AuthenticationTemplateSchema = new Schema<ITemplate["authentication"]>(
   {
-    project: { type: String, required: true },
-    language: { type: String, required: true },
+    project: { type: Schema.Types.ObjectId, ref: MODEL_NAMES.PROJECT, required: true },
+    language: { type: Schema.Types.ObjectId, ref: MODEL_NAMES.LANGUAGE, required: true },
     header: { type: HeaderSchema, required: true },
     initial: { type: InitialStepSchema, required: true },
     verification: { type: VerificationStepSchema, required: true },

@@ -8,4 +8,4 @@ const TranslationSchema = new Schema<ITranslation>({
   translations: { type: Map, of: String, default: {} }
 })
 
-export const Translation = model<ITranslation>(MODEL_NAMES.TRANSLATION, TranslationSchema)
+export const TranslationModel = model<ITranslation>(MODEL_NAMES.TRANSLATION, TranslationSchema)

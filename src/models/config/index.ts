@@ -15,4 +15,4 @@ const ConfigSchema = new Schema<IConfig>(
   }
 )
 
-export const Config = model<IConfig>(MODEL_NAMES.CONFIG, ConfigSchema)
+export const ConfigModel = model<IConfig>(MODEL_NAMES.CONFIG, ConfigSchema)

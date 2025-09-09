@@ -13,4 +13,4 @@ const TemplateSchema = new Schema<ITemplate>({
   timestamps: true
 })
 
-export const Template = model<ITemplate>(MODEL_NAMES.TEMPLATE, TemplateSchema)
+export const TemplateModel = model<ITemplate>(MODEL_NAMES.TEMPLATE, TemplateSchema)

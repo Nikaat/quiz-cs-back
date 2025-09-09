@@ -25,13 +25,19 @@ export interface ITemplate extends IBase {
   notFound: Errors.Content
   constants: Constants.Config
   serverError: Errors.Content
-  confirmPay: Authentication.Config
-  authentication: Authentication.Config
+  confirmPay: Omit<Authentication.Config, "project" | "language"> & {
+    project: Types.ObjectId
+    language: Types.ObjectId
+  }
+  authentication: Omit<Authentication.Config, "project" | "language"> & {
+    project: Types.ObjectId
+    language: Types.ObjectId
+  }
 }
 
 export interface IConfig extends IBase, Config.Config { }
 
 export interface IComposition extends IBase, Omit<Checkout.Config, "language" | "project"> {
-  project: IProject["key"]
-  language: ILanguage["key"]
+  project: Types.ObjectId
+  language: Types.ObjectId
 }
