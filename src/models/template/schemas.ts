@@ -1,3 +1,4 @@
+import { HeaderSchema } from "@/common/schemas/header";
 import { Schema } from "mongoose";
 
 export const ErrorTemplateSchema = new Schema<Errors.Content>(
@@ -135,6 +136,9 @@ const VerificationStepSchema = new Schema<Authentication.VerificationStep>(
 
 export const AuthenticationTemplateSchema = new Schema<Authentication.Config>(
   {
+    project: { type: String, required: true },
+    language: { type: String, required: true },
+    header: { type: HeaderSchema, required: true },
     initial: { type: InitialStepSchema, required: true },
     verification: { type: VerificationStepSchema, required: true },
   },
