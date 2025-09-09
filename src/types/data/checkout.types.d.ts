@@ -371,6 +371,7 @@ namespace Checkout {
 
   /** Checkout configuration extends base config */
   interface Config extends BaseConfig {
+    type: string
     offer: Offer
     sections: SectionReference[]
   }

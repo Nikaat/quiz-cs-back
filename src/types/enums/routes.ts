@@ -9,9 +9,10 @@ export const ROUTES = {
 }
 
 export const BASE_ROUTES: Record<DataCollection, string> = {
-  translation: "/translations",
+  config: "/configs",
   project: "/projects",
   language: "/languages",
   template: "/templates",
-  config: "/configs"
+  composition: "/compositions",
+  translation: "/translations",
 }

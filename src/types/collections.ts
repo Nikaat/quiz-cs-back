@@ -30,3 +30,8 @@ export interface ITemplate extends IBase {
 }
 
 export interface IConfig extends IBase, Config.Config { }
+
+export interface IComposition extends IBase, Omit<Checkout.Config, "language" | "project"> {
+  project: IProject["key"]
+  language: ILanguage["key"]
+}

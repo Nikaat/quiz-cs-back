@@ -15,7 +15,7 @@ export type asyncHandlerFn = (req: Request, res: Response, next: NextFunction) =
 
 export type ModelFunctions = "getAll" | "getSingle" | "create" | "update" | "remove"
 
-export type DataCollection = "project" | "language" | "translation" | "template" | "config"
+export type DataCollection = "project" | "language" | "translation" | "template" | "config" | "composition"
 
 export type HttpMethod = "GET" | "POST" | "PUT" | "PATCH" | "DELETE"
 
