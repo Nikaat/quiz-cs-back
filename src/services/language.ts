@@ -1,28 +1,32 @@
 import { ILanguage } from "@/types/collections";
 import { LanguageModel } from "@/models/language";
+import { Request } from "express";
+import { requestPayload } from "@/lib/utils";
 
 export const languageServices = {
-  create: async (payload: Pick<ILanguage, "key">) => {
+  create: async (req: Request): Promise<ILanguage | null> => {
+    const payload = requestPayload<Pick<ILanguage, "key">>(req)
     const thisLanguage = new LanguageModel(payload)
     await thisLanguage.save({ validateBeforeSave: true })
-    return thisLanguage
+    return thisLanguage.toObject()
   },
-  update: async (id: string, payload: Pick<ILanguage, "key">) => {
+  update: async (req: Request) => {
+    const payload = requestPayload<Pick<ILanguage, "key">>(req)
     return await LanguageModel.findByIdAndUpdate(
-      id,
+      req.params.id,
       payload,
       { new: true, runValidators: true }
     )
   },
-  delete: async (id: string) => {
+  delete: async (req: Request) => {
     return await LanguageModel.findByIdAndDelete(
-      id
+      req.params.id
     )
   },
   getAll: async (): Promise<ILanguage[]> => {
     return await LanguageModel.find()
   },
-  getSingle: async (id: string): Promise<ILanguage | null> => {
-    return await LanguageModel.findById(id)
+  getSingle: async (req: Request): Promise<ILanguage | null> => {
+    return await LanguageModel.findById(req.params.id)
   }
 }

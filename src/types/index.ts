@@ -27,17 +27,12 @@ export interface ApiResponse<T> {
   }
 }
 
-export type BaseItem<T> = {
-  _id: string
-  createdAt: string
-  updatedAt: string
-} & T
-export type CRUDItem<T> = BaseItem<T> | null | undefined
+export type CRUDItem<T> = T | null | undefined
 
 export type CRUDModel<T, K> = {
-  create?: (payload: any) => Promise<CRUDItem<T>>
-  delete?: (payload: any) => Promise<CRUDItem<T>>
-  update?: (payload: any) => Promise<CRUDItem<T>>
-  getSingle?: (payload: any) => Promise<CRUDItem<T>>
-  getAll: (payload: any) => Promise<BaseItem<T>[] | undefined | null>
+  create?: (req: Request) => Promise<CRUDItem<T>>
+  delete?: (req: Request) => Promise<CRUDItem<T>>
+  update?: (req: Request) => Promise<CRUDItem<T>>
+  getSingle?: (req: Request) => Promise<CRUDItem<T>>
+  getAll: (req: Request) => Promise<T[] | undefined | null>
 }
