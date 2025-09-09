@@ -1,23 +1,30 @@
 import { Date, Document, Types } from "mongoose"
 
-export interface ILanguage extends Document {
-  key: string
+type IBase = {
   createdAt: Date
   updatedAt: Date
+} & Document
+
+export interface ILanguage extends IBase {
+  key: string
 }
 
-export interface IProject extends Document {
+export interface IProject extends IBase {
   key: string
   types: string[]
   languages: Types.ObjectId[]
-  createdAt: Date
-  updatedAt: Date
 }
 
-export interface ITranslation extends Document {
+export interface ITranslation extends IBase {
   project: Types.ObjectId
   language: Types.ObjectId
   translations: Record<string, string>
-  createdAt: Date
-  updatedAt: Date
+}
+
+export interface ITemplate extends IBase {
+  notFound: Errors.Content
+  constants: Constants.Config
+  serverError: Errors.Content
+  confirmPay: Authentication.Config
+  authentication: Authentication.Config
 }

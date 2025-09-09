@@ -1,5 +1,6 @@
 export const MODEL_NAMES = {
   PROJECT: "Project",
   LANGUAGE: "Language",
-  TRANSLATION: "Translation"
+  TRANSLATION: "Translation",
+  TEMPLATE: "Template"
 } as const

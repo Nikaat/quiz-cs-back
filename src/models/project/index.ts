@@ -2,7 +2,7 @@ import { Schema, model } from "mongoose";
 import { MODEL_NAMES } from "@/types/enums/models";
 import { IProject } from "@/types/collections";
 
-const projectSchema = new Schema<IProject>(
+const ProjectSchema = new Schema<IProject>(
   {
     key: { type: String, required: true },
     types: [{ type: String, required: true }],
@@ -13,4 +13,4 @@ const projectSchema = new Schema<IProject>(
   }
 );
 
-export const Project = model<IProject>(MODEL_NAMES.PROJECT, projectSchema);
+export const Project = model<IProject>(MODEL_NAMES.PROJECT, ProjectSchema);
