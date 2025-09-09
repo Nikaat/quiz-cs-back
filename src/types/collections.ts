@@ -1,6 +1,6 @@
 import { Date, Document, Types } from "mongoose"
 
-type IBase = {
+export type IBase = {
   createdAt: Date
   updatedAt: Date
 } & Omit<Document, "errors">
