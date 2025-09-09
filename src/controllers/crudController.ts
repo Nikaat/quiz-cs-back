@@ -14,36 +14,36 @@ type Functions<T, K> = {
 
 export function crudController<T, K>(model: CRUDModel<T, K>, collection: DataCollection) {
   const messages = getMessagesByCollection(collection)
-  const functionsKey = ["getAll", "getSingle", "create", "update", "remove"] as const
+  const functionsKey = ["getAll", "getSingle", "create", "update", "delete"] as const
 
   const functions: Functions<T, K> = {
-    getAll: async (getAll, req, res) => {
+    getAll: async (getAllFn, req, res) => {
       const payload = requestPayload(req)
-      const list = await getAll(payload)
+      const list = await getAllFn(payload)
       return res.status(200).json(successResponse(list, messages.GET_ALL))
     },
-    getSingle: async (getSingle, req, res) => {
+    getSingle: async (getSingleFn, req, res) => {
       const payload = requestPayload(req)
-      const item = await getSingle(payload)
+      const item = await getSingleFn(payload)
       if (!item) return res.status(404).json(errorResponse(`${collection} ${ERRORS.NOT_FOUND}`))
       return res.status(200).json(successResponse(item, messages.GET_ONE))
     },
-    create: async (create, req, res) => {
-      const item = await create(requestPayload(req))
+    create: async (createFn, req, res) => {
+      const item = await createFn(requestPayload(req))
       if (!item) return res.status(400).json(errorResponse(ERRORS.BAD_REQUEST))
       return res.status(201).json(successResponse(item, messages.CREATE))
     },
-    update: async (update, req, res) => {
+    update: async (updateFn, req, res) => {
       const payload = requestPayload(req)
-      const item = await update(payload)
+      const item = await updateFn(payload)
       if (!item) return res.status(400).json(errorResponse(ERRORS.BAD_REQUEST))
       return res.status(200).json(successResponse(item, messages.UPDATE))
     },
-    remove: async (remove, req, res) => {
+    delete: async (deleteFn, req, res) => {
       const payload = requestPayload(req)
-      const item = await remove(payload)
+      const item = await deleteFn(payload)
       if (!item) return res.status(404).json(errorResponse(`${collection} ${ERRORS.NOT_FOUND}`))
-      return res.status(200).json(successResponse(item, messages.REMOVE))
+      return res.status(200).json(successResponse(item, messages.DELETE))
     },
   }
 

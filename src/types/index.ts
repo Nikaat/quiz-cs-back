@@ -36,7 +36,7 @@ export type CRUDItem<T> = BaseItem<T> | null | undefined
 
 export type CRUDModel<T, K> = {
   create?: (payload: any) => Promise<CRUDItem<T>>
-  remove?: (payload: any) => Promise<CRUDItem<T>>
+  delete?: (payload: any) => Promise<CRUDItem<T>>
   update?: (payload: any) => Promise<CRUDItem<T>>
   getSingle?: (payload: any) => Promise<CRUDItem<T>>
   getAll: (payload: any) => Promise<BaseItem<T>[] | undefined | null>

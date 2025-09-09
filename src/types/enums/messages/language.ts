@@ -3,5 +3,5 @@ export const LANGUAGE_MESSAGES = {
   GET_ONE: "OK",
   CREATE: "Language added successfully",
   UPDATE: "Language updated successfully",
-  REMOVE: "Language removed successfully"
+  DELETE: "Language removed successfully"
 }

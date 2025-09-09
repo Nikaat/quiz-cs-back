@@ -3,5 +3,5 @@ export const COMPOSITION_MESSAGES = {
   GET_ONE: "OK",
   CREATE: "Composition added successfully",
   UPDATE: "Composition updated successfully",
-  REMOVE: "Composition removed successfully"
+  DELETE: "Composition removed successfully"
 }

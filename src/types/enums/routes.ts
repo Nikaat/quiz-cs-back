@@ -5,7 +5,7 @@ export const ROUTES = {
   ADD: "/create",
   EDIT: "/update",
   GET_SINGLE: "/:id",
-  REMOVE: "/delete/:id",
+  DELETE: "/delete/:id",
 }
 
 export const BASE_ROUTES: Record<DataCollection, string> = {

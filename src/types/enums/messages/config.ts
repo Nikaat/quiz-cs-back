@@ -3,5 +3,5 @@ export const CONFIG_MESSAGES = {
   GET_ONE: "OK",
   CREATE: "Config added successfully",
   UPDATE: "Config updated successfully",
-  REMOVE: "Config removed successfully"
+  DELETE: "Config removed successfully"
 }

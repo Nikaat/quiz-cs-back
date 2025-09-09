@@ -3,5 +3,5 @@ export const TRANSLATION_MESSAGES = {
   GET_ONE: "OK",
   CREATE: "Translation added successfully",
   UPDATE: "Translation updated successfully",
-  REMOVE: "Translation removed successfully"
+  DELETE: "Translation removed successfully"
 }
